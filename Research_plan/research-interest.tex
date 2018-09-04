@@ -1,0 +1,46 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,total={6in, 10in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+\title{Research Statement}
+\author{Weiyao Ke \\
+Email: \href{wk42@phy.duke.edu}{wk42@phy.duke.edu}\\
+Advisor: Steffen A. Bass\\
+Duke University, Durham NC
+}
+\date{}
+
+\begin{document}
+\maketitle
+\section{Introduction}
+My current research interest is the development of a tunable Monte-Carlo model that accurately reflects perturbative calculation, targeting the examination of theory assumptions using future precision measurement.
+
+\section{Project description}
+The understanding of jet and heavy-flavors in heavy-ion collisions requires good uncertainty control on both experimental and theory sides.
+With measurements gaining precision, a reduction of prediction uncertainty is necessary.
+The current situation is that theory calculations are often performed in idealized scenarios while phenomenology jet Monte-Carlo models, though include important qualitative features such as the Landau-Pomeranchunk-Midgal effect in different ways, lack quantitative comparison with known theory calculations.
+This gap between the theory and Monte-Carlo tools can obscure the interpretation and understanding of the data.
+
+This problem needs to be solved by designing a jet Monte-Carlo that quantitative agrees with theory calculations in idealized limits and then apply to jets in heavy-ion collisions.
+I have made such an attempt in a recent paper \cite{}.
+The Monte-Carlo simulated radiative energy loss and especially the radiation spectrum agrees with leading order calculation within $\pm 20\%$. 
+This is very promising and it means that we can make leading order calculations in event-by-event evolving medium with a quantification of uncertainty.
+Of course, this is only a first step towards precision prediction.
+Other effects such as the interplay between the vacuum and the medium induced shower and possibly higher order corrections should also be implemented in a Monte-Carlo simulation to help understand the full picture of jets in heavy-ion collision.
+Eventually, the predictions will be made by coupling the jet Monte-Carlo to a state-of-the-art medium evolution model which I have been familiarized with during my graduated study.
+
+\section{Future plan}
+To push this effort, we will certainly benefit from a close connection with the jet theory community to discuss how to implement the jet physics more accurately in a Monte Carlo model and what novel effects can be studied in such a way. I have summarized my responsibility as follows,
+\begin{itemize}
+\item Study jet theory and familiarize with novel observables.
+\item Improve the leading order implementation as it is  the baseline for studying new effects.
+\item Try to interface vacuum and medium induced shower.
+\item Benchmark the model predictions with uncertainties.
+\end{itemize}
+
+
+\end{document}
