@@ -6,34 +6,82 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 
-\title{Research Statement}
-\author{Weiyao Ke \\
-Email: \href{wk42@phy.duke.edu}{wk42@phy.duke.edu}\\
-Advisor: Steffen A. Bass\\
-Duke University, Durham NC
-}
-\date{}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{graphicx}%
+\usepackage{fancyhdr}
+
+\textwidth6in
+
+\setlength{\topmargin}{0in} \addtolength{\topmargin}{-\headheight}
+\addtolength{\topmargin}{-\headsep}
+
+\setlength{\oddsidemargin}{0in}
+
+\oddsidemargin  0.0in \evensidemargin 0.0in \parindent0em
+
+\pagestyle{fancy}
+\lhead{Research Statement} 
+\rhead{\today}
+\chead{{\large{\bf Weiyao Ke}}} 
+\lfoot{} 
+\rfoot{\bf \thepage} 
+\cfoot{}
 
 \begin{document}
-\maketitle
-\section{Introduction}
-My current research interest is the development of a tunable Monte-Carlo model that accurately reflects perturbative calculation, targeting the examination of theory assumptions using future precision measurement.
 
-\section{Project description}
-The understanding of jet and heavy-flavors in heavy-ion collisions requires good uncertainty control on both experimental and theory sides.
-With measurements gaining precision, a reduction of prediction uncertainty is necessary.
-The current situation is that theory calculations are often performed in idealized scenarios while phenomenology jet Monte-Carlo models, though include important qualitative features such as the Landau-Pomeranchunk-Midgal effect in different ways, lack quantitative comparison with known theory calculations.
-This gap between the theory and Monte-Carlo tools can obscure the interpretation and understanding of the data.
+My research focus on the relativistic heavy-ion collisions phenomenology.
+I conduct my graduate research at Duke University under the supervision of Professor Steffen Bass.
 
-This problem needs to be solved by designing a jet Monte-Carlo that quantitative agrees with theory calculations in idealized limits and then apply to jets in heavy-ion collisions.
-I have made such an attempt in a recent paper \cite{}.
-The Monte-Carlo simulated radiative energy loss and especially the radiation spectrum agrees with leading order calculation within $\pm 20\%$. 
-This is very promising and it means that we can make leading order calculations in event-by-event evolving medium with a quantification of uncertainty.
-Of course, this is only a first step towards precision prediction.
-Other effects such as the interplay between the vacuum and the medium induced shower and possibly higher order corrections should also be implemented in a Monte-Carlo simulation to help understand the full picture of jets in heavy-ion collision.
-Eventually, the predictions will be made by coupling the jet Monte-Carlo to a state-of-the-art medium evolution model which I have been familiarized with during my graduated study.
+I have been developing a Monte-Carlo transport model for heavy-flavor that quantitatively agrees with calculations from thermal field theory.
+Based on this model, my colleagues and I extracted the heavy quark transport coefficient from a Bayesian model-to-data comparison.
+More recently, I start to study the Monte-Carlo implementation of the interplay between vacuum and medium-induced processes in the heavy-flavor context.
+I come to understand that we need precision implementation of theory ideas to make the best use of future high-precision jet measurement.
+I would like to continue my research in this direction and working closely within the jet theory group.
+
+\section{Summary of graduate research}
+I have been working with Professor Steffen Bass at Duke University since 2014. I summarized my major research projects as follows which I will described below,
+
+\subsection{A parametric 3D initial condition for hydrodynamic simulations of heavy-ion collisions}
+I extended the boost-invariant parametric initial condition model T\raisebox{-.25em}{R}ENTo to include space-time rapidity dependence, parameterized by the first three moments of the local rapidity distribution of the produced matter. Each moments depends on the local nuclear participant densities in a parametric way. Using a 3+1D hydrodynamic simulation with a hadronic afterburner, these parametric functions can be tuned to reproduce charged particle pseudorapdity density and two-particle rapidity correlation measured at the LHC. This way, we reverse engineered the local rapidity distribution of the entropy production at the onset of the quark-gluon plasma phase in the heavy-ion collision \cite{Ke:2016jrd}.
+
+\subsection{The development of a linearized Boltzmann+Langevin model ({\tt Lido}) for heavy-flavor transport}
+
+A phenomenological extraction of heavy quark transport property requires a flexible transport model with both theory inputs and tunable type of interactions. 
+The {\tt Lido} model \cite{Ke:2018tsh, Ke:2018jem} was developed for this purposes. The key idea is that large momenta transfer scatterings of heavy quark with the medium is solved by a linearized Boltzmann equation with perturbative QCD matrix-elements while soft and frequent interaction with the medium is modeled by a Langevin equation. The transport coefficient of the soft part is extracted from a Bayesian model-to-data comparison.
+
+\subsection{Extraction of heavy-flavor $\hat{q}$ using Bayesian statistics}
+
+Currently, I am working an updated extraction of $\hat{q}$ by comparing the improved {\tt Lido} model to experimental data. 
+The model has the advantages that its raditive process was implemented with controlled theory accuracy, and that the interaction model between hard parton and medium interpolates between pQCD matrix-element scattering approach and a radiation+diffusion approach. 
+A systematic comparison to experimental measurements by coupling the model to the state-of-the-art bulk medium evolution model will results in an reliably extracted heavy quark transport coefficient with model assumption uncertainty folded in.
+
+\subsection{An improved Monte-Carlo treatment of the Landau-Pomeranchuk-Migdal (LPM) effect}
+
+The original {\tt Lido} model only implements the LPM coherence effect qualitatively. To improve the physical accuracy of the model, I developed an improved Monte-Carlo implementation of the LPM effect that can be tuned to agree with leading order theory calculation to $\pm 15\%$ \cite{Ke:2018jem}. It is very promising that with this improvement we can emulate leading order calculations in event-by-event evolving medium with quantified uncertainty.
+This level of theory accuracy is essential to a reliable extraction of heavy-quark transport property when comparing to data. It is also a good basis for considering higher order effects in the future.
+
+
+\subsection{The interplay between vacuum and medium-induced radiation in a Monte-Carlo modeling}
+
+I am also working on an improved treatment of vacuum radiation in the transport approach. The transport approach is a formation that applies to partons with negligible virtuality, which is not true high$-p_T$ heavy quarks produced  in heavy-ion collision. 
+We used to assume that vacuum radiation happens on a shorter time scale compare to that of the medium formation, and one can perform vacuum radiation followed by an in-medium transport at the onset of quark-gluon plasma.
+This oversimplified picture is not true according to a recent study \cite{Caucal:2018dla}, where vacuum radiation may not only occupy the same space-time region as the medium-induced ones and but may also get modified by the medium.
+We find this interplay between vacuum and medium-induced shower can be essential to understand of very high$-p_T$ heavy-flavor nuclear modification factor. 
+We are working towards an interfacing scheme between Pythia vacuum shower and Lido in-medium transport to study the phenomenological implication of this effect.
+
+\subsection{  Collaboration work: contribute to the JetScape collaboration}
+
+I am also part of the JetScape collaboration since 2017. It is an NSF funded collaboration developing the next generation of event generators for both jet and bulk medium physics \cite{JetScape}. 
+I contribute to the development and testing of computational work-flow for bulk medium simulation and also support the development of related statistical package for systematic model parameter calibration.
+Another junior graduate student and I also focus on integrating the heavy-flavor transport model {\tt Lido} into the JetScape framework.
 
 \section{Future plan}
+The current situation is that theoretical calculations are often performed in idealized scenarios while phenomenology jet Monte-Carlo models, though include important qualitative features such as the Landau-Pomeranchunk-Midgal effect in different ways, lack quantitative comparison with known theory calculations.
+This gap between the theory and Monte-Carlo tools can obscure the interpretation and understanding of the data.
+
+This problem needs to be solved by designing a jet Monte-Carlo that quantitative agrees with theory in idealized limits and then apply to jets in heavy-ion collisions.
+
 To push this effort, we will certainly benefit from a close connection with the jet theory community to discuss how to implement the jet physics more accurately in a Monte Carlo model and what novel effects can be studied in such a way. I have summarized my responsibility as follows,
 \begin{itemize}
 \item Study jet theory and familiarize with novel observables.
@@ -42,5 +90,6 @@ To push this effort, we will certainly benefit from a close connection with the 
 \item Benchmark the model predictions with uncertainties.
 \end{itemize}
 
-
+\bibliography{citation}
+\bibliographystyle{ieeetr}
 \end{document}
