@@ -38,12 +38,12 @@ I shall summarize my major research projects, prospect for future studies, and a
 
 
 \section{Highlights of past and current research projects}
-I conduct my graduate research at Duke University under the supervision of Professor Steffen Bass since 2014.
+I conduct my graduate research at Duke University with Professor Steffen Bass since 2014.
 My major research focus was the development of a new Monte Carlo transport model for heavy-flavor propagation inside a quark-gluon plasma {\tt Lido}. It was originally published in \cite{Ke:2018tsh} and was later significantly improved in \cite{Ke:2018jem} considering its physical accuracy.
 
-The original model uses a hybrid linearized-Boltzmann-Langevin approach. The Boltzman transport uses perturbative scatterings and in particular, the gluon absorption process is considered to restore the detailed balance compared to previous studies. 
+The original model uses a hybrid linearized-Boltzmann-Langevin approach. The Boltzmann transport uses perturbative scatterings and in particular, the gluon absorption process is included to restore the detailed balance compared to previous studies. 
 Non-perturbative contribution to heavy quark dynamics is parametrized as a diffusion process using empirical transport coefficient.
-The transport coefficient $\hat{q}$ and heavy quark spatial diffusion constant $D_s$ (Figure \ref{fig:qhat_Ds}) was extracted by systematic  global comparison of this model to experimental data using a Bayesian statistical analysis.
+The heavy quark transport coefficient $\hat{q}$ was extracted by systematic global comparison of this model to experimental data using a Bayesian statistical analysis (Figure \ref{fig:qhat_Ds}).
 \begin{figure}[ht]
 \centering
 \begin{minipage}{.51\textwidth}
@@ -63,12 +63,12 @@ The model had been significantly improved in two aspects that greatly improve it
 \item[1.] A separation scale $Q_{\textrm{cut}}\propto T$ is introduced to the {\tt Lido} model. 
 Large-momenta transfer ($Q > Q_{\textrm{cut}}$) processes are still modeled by perturbative scatterings; while small-momenta transfer ($Q < Q_{\textrm{cut}}$) interactions are absorbed into the Langevin equation. 
 Therefore a tuning of the scale parameter $Q_{\textrm{cut}}$ smoothly interpolates the linearized Boltzmann equation to a Lanegvin equation.
-\item[2.] The Monte-Carlo implementation of the Landau-Pomeranchuk-Migdal (LPM) effect is improved so that gluon multiple-scatterings during the formation time is included. 
+\item[2.] The Monte-Carlo implementation of the Landau-Pomeranchuk-Migdal (LPM) effect is improved so that gluon multiple-scatterings during the formation time is resummed. 
 In particular, the new implementation quantitatively reproduces the theoretical calculations of gluon radiation spectra (Figure \ref{fig:spectra}).
 \end{itemize}
 
 Currently, I am working on a third improvement to the model related to the vacuum-like radiation. 
-In many transport studies, the vacuum radiation is assumed to be unmodified by the medium.
+In many transport studies, the vacuum radiation is assumed as unmodified in the medium.
 However, this simple picture is not correct as shown by a recent study \cite{Caucal:2018dla} that vacuum-like radiation should be excluded in a certain region of the phase-space, which is populated by medium induced radiation.
 I implemented the vacuum radiation phase-space subtraction in a {\tt Pythia + Lido} simulation to study its impacts on heavy-flavor observables.
 The preliminary result (Figure \ref{fig:prelim}) shows that the subtraction increases high-$p_T$ $R_{AA}$ notable, but only slightly affects the momentum anisotropy $v_2$.
@@ -83,7 +83,7 @@ The result will be promising given the physical accuracy, modeling flexibility o
 \end{center}
 \end{figure}
 
-Finally, I am also part of the JetScape collaboration since 2017. 
+Finally, I am also part of the {\tt JetScape} collaboration since 2017. 
 It is an NSF funded collaboration developing the next generation of event generators for both jet and bulk medium physics \cite{JetScape}. 
 I contributed to the development and testing of computational work-flow for bulk medium simulation and also support the development of related statistical package for systematic model parameter calibration.
 Another junior graduate student and I will be responsible for integrating the {\tt Lido} model into the JetScape heavy-flavor sector.
@@ -95,7 +95,7 @@ To make the best out of future data, I would like to contribute to the developme
 It is an important task since theory / modeling uncertainty affects the interpretation of the data and understanding of the jet / heavy flavor transport properties.
 My road-map is to first calibrate jet transport algorithm to leading order perturbative calculation and validate its physical accuracy. 
 This task for heavy-flavor is partially finished during the development of the {\tt Lido} model.
-Then as a long term goal, a transport model validated at leading order will be the starting point to consider next-to-leading order effects and dynamical medium corrections.
+Then as a long-term goal, a transport model validated at leading order will be the starting point to consider next-to-leading order effects and dynamical medium corrections.
 By such a practice, the theoretical uncertainty can really be understood to evaluate how reliable is the description of jet transport phenomenon.
 To push this effort, it would be ideal to work closely with jet theory community so that my transport simulation and statistical analysis expertise meets the frontier of theory developments. 
 I have summarized my research responsibility as follows,
@@ -115,11 +115,11 @@ Boltzmann equation assumes a medium consisting of quasi-particles at weak coupli
 Given that a rather large coupling is probed at RHIC and the LHC, I worked on a model that interpolates between these two pictures to generalize the transport modeling.
 
 The {\tt Lido} model was eventually developed for this purpose \cite{Ke:2018tsh, Ke:2018jem}. Both the elastic and inelastic processes are considered.
-The key feature is a separation scale $Q_{\textrm{cut}}\propto T$. Interactions between heavy quarks and the medium that involves large-momenta transfer ($Q > Q_{\textrm{cut}}$) are modeled by a linearized Boltzmann equation with perturbative QCD matrix-elements;  while small-momenta transfer ($Q < Q_{\textrm{cut}}$) interactions and possible non-perturbative processes are modeled in a Langevin equation with an empirical transport coefficient. The benefits of this separation are listed below. First, it smoothly interpolates the scattering based Boltzmann equation to the diffusion picture. Second, perturbative matrix-elements are exclusively applied to large-momenta transfer processes that probe the medium on short time scales. Therefore the values of running coupling constant that enters the calculates are well controlled. Third, an empirical transport coefficient of the diffusion sector grants the model a flexible parametrization on soft and non-perturbative contribution. Its functional forms can be extracted in a systematic model-to-data comparison.
+The key feature is a separation scale $Q_{\textrm{cut}}\propto T$. Interactions between heavy quarks and the medium with large-momenta transfer ($Q > Q_{\textrm{cut}}$) are modeled by a linearized Boltzmann equation with perturbative QCD matrix-elements;  while small-momenta transfer ($Q < Q_{\textrm{cut}}$) interactions and possible non-perturbative processes are modeled in a Langevin equation with an empirical transport coefficient. The benefits of this separation are listed below. First, it smoothly interpolates the scattering based Boltzmann equation to the diffusion picture. Second, perturbative matrix-elements are exclusively applied to large-momenta transfer processes that probe the medium on short time scales. Therefore the values of running coupling constant that enters the calculates are well controlled. Third, an empirical transport coefficient of the diffusion sector grants the model a flexible parametrization on soft and non-perturbative contribution. Its functional forms can be extracted in a systematic model-to-data comparison.
 
 \subsection{Modeling of quantum coherence in a transport approach}
 At high transverse momenta ($p_T$), parton energy lose is dominated by gluon radiation processes. However, a Monte-Carlo implementation of gluon radiation is a non-trivial task, because the formation of a gluon radiation in a dense medium is a coherence processes over a long distance (the LPM effect) compared to the collision mean-free-path. 
-Moreover, in an dynamically evolving medium, the formation time can be comparable to the medium expansion time scale and the size of QGP fireballs. 
+Moreover in an expanding medium, the formation time can be comparable to the medium expansion time scale and the size of QGP fireballs. 
 Therefore, an effective Monte-Carlo implementation of this quantum coherence is of both theory interest and phenomenology importance to observables at high $p_T$.
 
 I reformulated the original coherence treatment in {\tt Lido}.
@@ -130,11 +130,11 @@ This approach is validated by comparing the Monte Carlo simulated radiative ener
 It has been shown that the simulated energy loss and radiation spectra agree with theory calculations within $\pm 15\%$ level of accuracy. 
 This is essential for a reliable extraction of jet transport properties from experimental measurements using a Monte Carlo transport model that couples to realistic hydrodynamic medium evolution models.
 Currently, this implementation is constructed to match theory calculations at leading order. 
-It is therefore a good basis for including next-to-leading order effects for future phenomenology studies.
+It is a good basis for including next-to-leading order effects for future phenomenology studies.
 
 
 \subsection{Application of Bayesian statistical analysis to the extraction of heavy-quark transport property}
-It is extremely difficult to calculate heavy quark transport coefficient $\hat{q}$ from first principal. 
+It is extremely difficult to calculate heavy quark transport coefficient $\hat{q}$ from first principle. 
 An alternative is learning it from experiments by inferring probability distribution of physical parameters from a global Bayesian statistical analysis.
 Based on the Bayes theorem, the probability distribution of the true physical parameters breaks down to a product of a prior probability distribution and the likelihood function.
 The prior distribution encodes the existing knowledge on a reasonable range to vary the parameters, while the likelihood function estimates the quality for a model with a certain set of parameters to described experimental data.
@@ -143,7 +143,7 @@ Second, instead of proposing a ``best" set of parameters, this procedure propaga
 Therefore, it is an ideal tool to quantify how much information can we learn from heavy-ion phenomenology about the properties of QGP and hard probes.
 
 I performed a global analysis by comparing calculations from the original {\tt Lido} model (before using the improved of LPM implementation and the separation scale between diffusion and scattering) to the $R_{AA}$ and $v_{2}$ measurements at the LHC. 
-The extracted $\hat{q}/T^3$ of heavy quark suggests an decreasing trend with temperature and a moderate momentum dependence.
+The study suggests a decreasing $\hat{q}/T^3$ with temperature and a moderate momentum dependence.
 The heavy quark spatial diffusion constant $D_s$ is comparable to the lattice evaluation in the static limit.
 Comparing to a previous extraction using an improved Langevin equation, $\hat{q}$ out of the two analysis do not agree within $95\%$ credible region at large momenta
 What we learned is that different model assumptions affect the phenomenological understanding of the transport parameter.
@@ -153,7 +153,7 @@ This also motivates the later developments that allows for a smooth interpolate 
 To constrain a three-dimensional fluctuating entropy production created at early times in heavy-ion collision events, I extended the boost-invariant parametric initial condition model T\raisebox{-.25em}{R}ENTo to include space-time rapidity dependence \cite{Ke:2016jrd}. 
 The local longitudinal profile of entropy production is parameterized by the first three moments its rapidity distribution. 
 Each moments depends on the local nuclear participant densities in a parametric way. 
-Using a 3+1D hydrodynamic simulation with a hadronic afterburner, these parametric dependences can be tuned to reproduce the charged particle pseudorapdity density and two-particle rapidity correlation measured at the LHC. 
+Using a 3+1D hydrodynamic simulation with a hadronic afterburner, the parametric dependence can be tuned to reproduce the charged particle pseudorapidity density and two-particle rapidity correlation measured at the LHC. 
 This way, a three-dimensional structure of the entropy production at the onset of the quark-gluon plasma phase is reverse engineered from experimental data for the first time.   
 
 \bibliography{citation}
