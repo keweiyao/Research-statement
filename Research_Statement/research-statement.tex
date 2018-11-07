@@ -39,7 +39,7 @@ I shall first summarize my major research projects and future prospects. The sta
 \section*{Highlights of past and current research projects}
 I conduct my graduate research at Duke University with Professor Steffen Bass since 2014.
 My major research focus was the development of a new Monte Carlo transport model ({\tt Lido}) for heavy-flavor propagation inside a quark-gluon plasma. It was originally proposed in \cite{Ke:2018tsh} and was later significantly improved in \cite{Ke:2018jem}.
-The original model used a hybrid linearized-Boltzmann-Langevin approach. Perturbative scatterings are included in the Boltzmann transport part. 
+The original model used a hybrid linearized Boltzmann-Langevin approach. Perturbative scatterings are included in the Boltzmann transport part. 
 In particular, the gluon absorption process is implemented to balance the medium induced radiation. 
 Non-perturbative contribution to heavy quark dynamics is modeled by a Langevin equation.
 The heavy quark transport coefficient $\hat{q}$ was extracted using this model by comparing to experimental data in a global Bayesian analysis (Figure \ref{fig:qhat_Ds}).
@@ -54,7 +54,7 @@ The heavy quark transport coefficient $\hat{q}$ was extracted using this model b
 \begin{minipage}{.48\textwidth}
   \centering
   \includegraphics[width=\textwidth]{spectrum_L.png}
-  \caption{Compare simulated radiaiton spectrum to theory calculation \cite{CaronHuot:2010bp} in a finite medium.}\label{fig:spectra}
+  \caption{Compare simulated radiation spectrum to theory calculation \cite{CaronHuot:2010bp} in a finite medium.}\label{fig:spectra}
 \end{minipage}
 \end{figure}
 
@@ -66,7 +66,7 @@ Second, I improved the Monte-Carlo implementation of the Landau-Pomeranchuk-Migd
 It is worth mentioning that the resulting simulation quantitatively agrees with the theoretical calculations of gluon radiation spectra (Figure \ref{fig:spectra}).
 
 Currently, I am working on a tentative modeling of the vacuum-like radiation. 
-In contrary to a common practice in tranport simualtions that vacuum radiation remains unmodified, a recent study \cite{Caucal:2018dla} showed that vacuum-like radiation should be excluded in a certain phase-space occupied by the medium induced radiation.
+In contrary to a common practice in transport simulations that vacuum radiation remains unmodified, a recent study \cite{Caucal:2018dla} showed that vacuum-like radiation should be excluded in a certain phase-space occupied by the medium induced radiation.
 I implemented this phase-space subtraction in a {\tt Pythia + Lido} simulation to study its phenomenological impacts.
 The preliminary result (Figure \ref{fig:prelim}) shows a notable increase of high-$p_T$ $R_{AA}$ due to the subtraction while the momentum anisotropy $v_2$ is slightly modified.
 So, the improved treatment of vacuum-like radiation helps to solve the problem of simultaneous description of $R_{AA}$ and $v_2$, in addition to other possible solutions.
